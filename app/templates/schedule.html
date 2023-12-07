@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule</title>
+  </head>
+  <body>
+    <h1>Schedule</h1>
+
+    <!-- Display the schedule here using the provided data -->
+    <table border="1">
+      <tr>
+        <th>Matakuliah</th>
+        <th>Jenis</th>
+        <th>Durasi</th>
+        <th>Dosen 1</th>
+        <th>Dosen 2</th>
+        <th>Asisten Dosen</th>
+        <th>Kelas</th>
+        <th>Semester</th>
+        <th>Waktu</th>
+        <th>Ruangan</th>
+      </tr>
+      {% for course, schedule_info in schedule.items() %}
+      <tr>
+        <td>{{ course }}</td>
+        <td>{{ matakuliah_info['Jenis'] }}</td>
+        <td>{{ matakuliah_info['Durasi'] }}</td>
+        <td>{{ matakuliah_info['Dosen 1'] }}</td>
+        <td>{{ matakuliah_info['Dosen 2'] }}</td>
+        <td>{{ matakuliah_info['Asisten Dosen'] }}</td>
+        <td>{{ matakuliah_info['Kelas'] }}</td>
+        <td>{{ matakuliah_info['Semester'] }}</td>
+        <td>
+          {{ schedule_info['Hari'] }} {{ schedule_info['Waktu_Mulai'] }}-{{
+          schedule_info['Waktu_Akhir'] }}
+        </td>
+        <td>{{ schedule_info['Ruangan'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

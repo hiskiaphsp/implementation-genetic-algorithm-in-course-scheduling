@@ -1,0 +1,19 @@
+Kode;Mata Kuliah;Jenis;Durasi;Dosen 1;Dosen 2;Asisten Dosen;Kelas;Semester
+BINGV_T;Bahasa Inggris V;Teori;1;JYD;-;-;33TI;5
+TEKCERTAN_T;Teknologi Kecerdasan Buatan;Teori;1;IKY;TAP;TAR;33TI;5
+ALU_T;Algoritma Lanjutan ;Teori;1;TAP;-;MAI;33TI;5
+JAVAEE_T;Java untuk Pemrograman Aplikasi Enterprise ;Teori;1;GHP;-;-;33TI;5
+KEPAL_T;Keamanan Perangkat Lunak ;Teori;2;RCH;-;MAI;33TI;5
+TA1_T;Tugas Akhir;Teori;1;HER;-;-;33TI;5
+TEKNO_T;Keteknowiraan ;Teori;1;WAS;BPS;TAR;33TI;5
+BINGV_P;Bahasa Inggris V;Praktikum;2;JYD;-;-;33TI;5
+TEKCERTAN_P1;Teknologi Kecerdasan Buatan ;Praktikum;2;IKY;TAP;TAR;33TI;5
+TEKCERTAN_P2;Teknologi Kecerdasan Buatan;Praktikum;2;IKY;TAP;TAR;33TI;5
+ALU_P1;Algoritma Lanjutan;Praktikum;2;TAP;-;MAI;33TI;5
+ALU_P2;Algoritma Lanjutan ;Praktikum;2;TAP;-;MAI;33TI;5
+JAVAEE_P1;Java untuk Pemrograman Aplikasi Enterprise ;Praktikum;2;GHP;-;-;33TI;5
+JAVAEE_P2;Java untuk Pemrograman Aplikasi Enterprise ;Praktikum;2;GHP;-;-;33TI;5
+KEPAL_P;Keamanan Perangkat Lunak;Praktikum;2;RCH;-;MAI;33TI;5
+TA1_P1;Tugas Akhir;Praktikum;2;HER;-;-;33TI;5
+TA1_P2;Tugas Akhir;Praktikum;2;HER;-;-;33TI;5
+TEKNO_P;Keteknowiraan;Praktikum;2;WAS;BPS;TAR;33TI;5

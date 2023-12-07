@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Jadwal Terbaik</h1>
+
+      <!-- Form for file uploads -->
+      <form method="post" enctype="multipart/form-data" action="/">
+        <div class="form-group">
+          <label for="file_matakuliah">Matakuliah CSV:</label>
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="file_matakuliah"
+              name="file_matakuliah"
+              accept=".csv"
+              required
+              onchange="updateFileNameLabel(this, 'file_matakuliah_label')"
+            />
+            <label
+              class="custom-file-label"
+              id="file_matakuliah_label"
+              for="file_matakuliah"
+              >Choose file</label
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="file_ruangan">Ruangan CSV:</label>
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="file_ruangan"
+              name="file_ruangan"
+              accept=".csv"
+              required
+              onchange="updateFileNameLabel(this, 'file_ruangan_label')"
+            />
+            <label
+              class="custom-file-label"
+              id="file_ruangan_label"
+              for="file_ruangan"
+              >Choose file</label
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="file_waktu">Waktu CSV:</label>
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="file_waktu"
+              name="file_waktu"
+              accept=".csv"
+              required
+              onchange="updateFileNameLabel(this, 'file_waktu_label')"
+            />
+            <label
+              class="custom-file-label"
+              id="file_waktu_label"
+              for="file_waktu"
+              >Choose file</label
+            >
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Generate Schedule</button>
+      </form>
+
+      <!-- Table for displaying the schedule -->
+      <table class="table table-bordered mt-4">
+        <thead>
+          <tr>
+            <th>Matakuliah</th>
+            <th>Jenis</th>
+            <th>Durasi</th>
+            <th>Dosen 1</th>
+            <th>Dosen 2</th>
+            <th>Asisten Dosen</th>
+            <th>Kelas</th>
+            <th>Semester</th>
+            <th>Waktu</th>
+            <th>Ruangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in schedule_list %}
+          <tr>
+            <td>{{ entry['course']|default('-') }}</td>
+            <td>{{ entry['jenis']|default('-') }}</td>
+            <td>{{ entry['durasi']|default('-') }}</td>
+            <td>{{ entry['dosen1']|default('-') }}</td>
+            <td>{{ entry['dosen2']|default('-') }}</td>
+            <td>{{ entry['asisten_dosen']|default('-') }}</td>
+            <td>{{ entry['kelas']|default('-') }}</td>
+            <td>{{ entry['semester']|default('-') }}</td>
+            <td>{{ entry['schedule_str']|default('-') }}</td>
+            <td>{{ entry['ruangan']|default('-') }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bootstrap JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      function updateFileNameLabel(input, labelId) {
+        var fileName = input.files[0].name;
+        document.getElementById(labelId).innerText = fileName;
+      }
+    </script>
+  </body>
+</html>
